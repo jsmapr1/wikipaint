@@ -1,0 +1,20 @@
+todo.txt
+
+Minimum Marketing Feature:
+- Marketing Home Page
+- Collaborative Painting Page (very basic)
+- wikify the pages
+- more complex painting
+- more collaborative features
+
+User Stories :
+- "hello world" server
+- "hello world" client
+- support multiple browsers
+- marketing copy
+
+Engineering Tasks:
+- Automated Build
+- Continuous Integration
+- server-side testing
+- client-side testing
