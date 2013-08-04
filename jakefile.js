@@ -13,11 +13,17 @@
         files.exclude('build');
 
         lint.validateFileList(files.toArray(), nodeLintOptions(), {});
+        if(!passed) fail("lint failed");
     });
 
     desc('example');
     task('example', function() {
       console.log('example task');
+    });
+
+    desc('integrate');
+    task('integrate', ["default"], function() {
+        console.log('Integration Logic Goes Here');
     });
 
     function nodeLintOptions() {
