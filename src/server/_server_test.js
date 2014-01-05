@@ -1,7 +1,9 @@
 // tests for server
 "use strict";
 
+var server = require("./server.js");
+
 exports.testNothing = function(test) {
-	test.ok(true, "hello");
+	test.equals(server.number(), 3, "number");
 	test.done();
 };
