@@ -3,7 +3,7 @@
     "use strict";
 
     desc ('Build and Test');
-    task('default', ['lint']);
+    task('default', ['lint', 'test']);
 
     desc('lint everything');
     task('lint', [], function() {
@@ -13,7 +13,12 @@
         files.exclude('node_modules');
         files.exclude('build');
 
-        lint.validateFileList(files.toArray(), nodeLintOptions(), {});
+        lint.validateFileList(files.toArray(), nodeLintOptions(), {} || fail('lint failes'));
+    });
+
+    desc('test everything');
+    task('test', [], function(){
+        console.log('first test');
     });
 
     desc('example');
