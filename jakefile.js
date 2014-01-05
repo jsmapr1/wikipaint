@@ -18,7 +18,8 @@
 
     desc('test everything');
     task('test', [], function(){
-        console.log('first test');
+        var reporter = require("nodeunit").reporters["default"];
+        reporter.run(['test']);
     });
 
     desc('example');
