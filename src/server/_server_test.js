@@ -20,3 +20,18 @@ exports.testServerRespondsToGetRequests = function(test) {
 		test.done();
 	});
 };
+
+exports.testServerReturnsHelloWorld = function(test) {
+	server.start();
+	var request = http.get("http://localhost:8080");
+    request.on("response", function(response) {
+        response.setEncoding('utf8');
+        test.equal(200, response.statusCode, "status code");
+		response.on("data", function(chunk){
+            test.equal("Hello, world", chunk, "response text");
+        });
+        response.on("end", function() {
+            test.done();
+        });
+	});
+};
